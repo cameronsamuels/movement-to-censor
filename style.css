@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+body {
+    margin: 0;
+    background: #c99C9C;
+    color: #231f20;
+    font-family: 'EB Garamond', serif;
+    font-size: 16pt;
+}
+
+a {
+    color: inherit;
+}
+
+main {
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding: 40px;
+    background: #fbfbfb;
+}
+
+#article-header h1 {
+    margin: 1rem 0;
+    font-size: 2.5em;
+}
+
+#article-header h3 {
+    font-size: 1.2em;
+}
+
+#article-header p strong {
+    margin-right: 8px;
+}
+
+#article-header p strong:after {
+    content: "|";
+    margin-left: 8px;
+}
+
+#article-header .fa {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.dataviz span {
+    display: block;
+    font-size: 11pt;
+    margin-bottom: 10pt;
+}
+
+#studentsByRace svg .chartSeries + g {
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+#studentsByRace svg .chartSeries:hover + g {
+    opacity: 100;
+}
+
+#studentsByRace svg .chartSeries:hover {
+    transition: .3s fill;
+    fill: #b09C9C;
+}
+
+#studentsByRace .dataLabel {
+    pointer-events: none;
+}
+
+#studentsByRace .dataLabel:after {
+    content: "%";
+    font-size: 10pt;
+}
+
+/* Styles for senateDistricts.svg in file */
+.dataviz object {
+    display: block;
+    width: 100%;
+}
+
+#article-footer hr {
+    width: 50px;
+    margin: 50px 0 20px;
+    border: 1px #231f20 solid;
+    opacity: 50%;
+}
