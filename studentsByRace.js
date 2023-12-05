@@ -116,6 +116,37 @@ svg.append("g")
     .call(d3.axisLeft(y).tickSizeInner(0))
     .call(g => g.select(".domain").remove());
 
+// Add legend key
+let yVal = height - marginBottom*2;
+let fontSize = y.bandwidth()/3;
+svg.append("rect")
+    .attr("fill", "#c0c0c0")
+    .attr("y", yVal)
+    .attr("x", width * .65)
+    .attr("width", y.bandwidth()/2)
+    .attr("height", fontSize);
+svg.append("text")
+    .attr("fill", "#000000")
+    .attr("y", yVal + fontSize)
+    .attr("x", width * .65 + y.bandwidth()/2 + 5)
+    .attr("font-size", fontSize)
+    .text("State Population");
+
+// Add legend key
+yVal = height - marginBottom*2 - y.bandwidth()/2;
+svg.append("rect")
+    .attr("fill", "#777777")
+    .attr("y", yVal)
+    .attr("x", width * .65)
+    .attr("width", y.bandwidth()/2)
+    .attr("height", fontSize);
+svg.append("text")
+    .attr("fill", "#000000")
+    .attr("y", yVal + fontSize)
+    .attr("x", width * .65 + y.bandwidth()/2 + 5)
+    .attr("font-size", fontSize)
+    .text("Enrollment");
+
 // Append the SVG element.
 container.append(svg.node());
 
