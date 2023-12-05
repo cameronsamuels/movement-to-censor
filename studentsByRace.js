@@ -71,8 +71,8 @@ svg.append("g")
     .join("text")
     .attr("class", "dataLabel")
     .attr("y", (d) => y(d.race) + y.bandwidth()/2)
-    .attr("x", greatestBarSize + 35)
-    .text((d) => Math.round(d.proportion*100));
+    .attr("x", greatestBarSize + 50)
+    .text((d) => Math.round(d.proportion*100) + "%");
 
 // Add a rect for each bar.
 svg.append("g")
@@ -96,8 +96,8 @@ svg.append("g")
     .join("text")
     .attr("class", "dataLabel")
     .attr("y", (d) => y(d.race) + y.bandwidth()/2)
-    .attr("x", greatestBarSize + 35)
-    .text((d) => Math.round(d.proportion*100));
+    .attr("x", greatestBarSize + 50)
+    .text((d) => Math.round(d.proportion*100) + "%");
 
 // Add the x-axis and label.
 svg.append("g")
