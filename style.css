@@ -46,6 +46,21 @@ main {
     text-decoration: none;
 }
 
+.image-gallery {
+    text-align: center;
+}
+
+.image-gallery img {
+    width: 32%;
+}
+
+.dataviz {
+    border-top: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    padding: 20px 0;
+    margin: 40px 0;
+}
+
 .dataviz span {
     display: block;
     font-size: 11pt;
@@ -79,6 +94,22 @@ main {
 .dataviz object {
     display: block;
     width: 100%;
+}
+
+#genderPolicy {
+    max-width: 80%;
+    padding: 20px;
+    background: #eee;
+    font-family: monospace;
+    font-size: 60%;
+}
+
+#genderPolicy li {
+    margin-bottom: 10px;
+}
+
+#genderPolicy a {
+    font-size: 80%;
 }
 
 #article-footer hr {

@@ -26,7 +26,7 @@ const width = container.width();
 const height = width * 1/3;
 const marginTop = 20;
 const marginRight = 20;
-const marginBottom = 40;
+const marginBottom = 20;
 const marginLeft = 30;
 
  // Declare the x (horizontal position) scale.
