@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        font-size: 168.2px;
+        font-size: 140.2px;
       }
 
       .cls-2, .cls-3 {
@@ -44,6 +44,10 @@
         fill: #ddd;
       }
 
+      g {
+        transition: opacity .5s;
+      }
+
       .sen {
         opacity: .5;
         transition: opacity .5s;
@@ -51,6 +55,10 @@
 
       .author {
         opacity: 1;
+      }
+
+      .hidden {
+        opacity: 0;
       }
 
     </style>
@@ -367,23 +375,23 @@
   </g>
   <g id="svg-btn-sb763" class="svg-btn" onclick="selectBill('sb763')">
     <rect class="cls-4" x="6" y="6" width="678.88" height="246.2"/>
-    <text class="cls-1" transform="translate(74.36 181.81)">S.B. 763</text>
+    <text class="cls-1" transform="translate(74.36 171.81)">S.B. 763</text>
   </g>
   <g id="svg-btn-hb900" class="svg-btn" onclick="selectBill('hb900')">
     <rect class="cls-4" x="717.79" y="6" width="678.88" height="246.2"/>
-    <text class="cls-1" transform="translate(786.15 181.81)">H.B. 900</text>
+    <text class="cls-1" transform="translate(786.15 171.81)">H.B. 900</text>
   </g>
   <g id="svg-btn-hb18" class="svg-btn" onclick="selectBill('hb18')">
     <rect class="cls-4" x="6" y="277.8" width="613.07" height="246.2"/>
-    <text class="cls-1" transform="translate(74.36 453.61)">H.B. 18</text>
+    <text class="cls-1" transform="translate(74.36 443.61)">H.B. 18</text>
   </g>
   <g id="svg-btn-sb17" class="svg-btn" onclick="selectBill('sb17')">
     <rect class="cls-4" x="647.1" y="277.8" width="582.6" height="246.2"/>
-    <text class="cls-1" transform="translate(715.46 453.61)">S.B. 17</text>
+    <text class="cls-1" transform="translate(715.46 443.61)">S.B. 17</text>
   </g>
   <g id="svg-btn-sb3" class="svg-btn" onclick="selectBill('sb3')">
     <rect class="cls-4" x="1261.39" y="277.8" width="503.37" height="246.2"/>
-    <text class="cls-1" transform="translate(1329.75 453.61)">S.B. 3</text>
+    <text class="cls-1" transform="translate(1329.75 443.61)">S.B. 3</text>
   </g>
   <g>
     <rect class="cls-4" x="1430.8" y="6" width="333.96" height="246.2"/>
@@ -398,6 +406,10 @@
         <path class="cls-2" d="m1565.33,206.61c1.16-7.2,2.31-15.54,3.92-23.79.59-3.03,3.43-3.94,6.31-3.43,2.95.52,4.96,2.66,4.62,5.55-.95,8.11-2.21,16.18-3.65,24.22-.53,2.93-2.92,4.38-5.93,4.09-3.21-.32-4.88-2.31-5.26-6.64Z"/>
         <path class="cls-3" d="m1659.67,65.77c3.47,4.44,6.72,8.59,10.2,13.04-7.31,5.77-14.42,11.37-21.53,16.97-6.96,5.48-6.99,6.47.44,11.58,5.21,3.58,10.65,6.81,15.88,10.35,1.69,1.14,3.06,2.77,5.23,4.77-32.8,7.33-64.61,14.43-97.22,21.72,14.79-29.82,29.27-59.02,44.29-89.29,1.61,2.69,2.94,4.32,3.65,6.19,2.74,7.18,5.24,14.46,7.91,21.67,1.41,3.82,3.3,4.51,6.56,2.07,7.06-5.3,13.97-10.81,20.94-16.23,1.08-.84,2.17-1.68,3.66-2.83Z"/>
       </g>
+    </g>
+    <g id="totalCount" class="hidden">
+      <rect class="cls-4" x="1057.2" y="1281.6" width="710" height="246.2"/>
+      <text class="cls-1" transform="matrix(1 0 0 1 1125.59 1457.4011)">Total: _</text>
     </g>
   </g>
   <script>
@@ -414,9 +426,13 @@
       document.querySelectorAll(".author").forEach((i) => {
         i.setAttribute("class", "sen");
       });
+      let count = 0;
       data[x].forEach((i) => {
         document.querySelector("#sen-" + i).setAttribute("class", "sen author");
+        count++;
       });
+      document.querySelector("#totalCount").setAttribute("class", "");
+      document.querySelector("#totalCount text").textContent = "Total: " + count;
       document.querySelectorAll(".active").forEach((i) => {
         i.setAttribute("class", "svg-btn");
       });
