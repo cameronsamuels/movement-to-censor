@@ -13,11 +13,24 @@ a {
 }
 
 main {
+    box-sizing: border-box;
     display: block;
     width: 50%;
     margin: auto;
     padding: 40px;
     background: #fbfbfb;
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        width: 90%;
+    }
+}
+
+@media print {
+    main {
+        width: 90%;
+    }
 }
 
 #article-header h1 {
