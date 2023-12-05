@@ -38,7 +38,7 @@ const y = d3.scaleBand()
 
 // Declare the proportion scale.
 const x = d3.scaleLinear()
-    .domain([0, .55])
+    .domain([0, .6])
     .range([marginLeft, width - marginRight]);
 let greatestBarSize = x(d3.max(dataSchools, (d) => d.proportion));
 
@@ -71,7 +71,7 @@ svg.append("g")
     .join("text")
     .attr("class", "dataLabel")
     .attr("y", (d) => y(d.race) + y.bandwidth()/2)
-    .attr("x", greatestBarSize + 10)
+    .attr("x", greatestBarSize + 35)
     .text((d) => Math.round(d.proportion*100));
 
 // Add a rect for each bar.
@@ -96,7 +96,7 @@ svg.append("g")
     .join("text")
     .attr("class", "dataLabel")
     .attr("y", (d) => y(d.race) + y.bandwidth()/2)
-    .attr("x", greatestBarSize + 10)
+    .attr("x", greatestBarSize + 35)
     .text((d) => Math.round(d.proportion*100));
 
 // Add the x-axis and label.
